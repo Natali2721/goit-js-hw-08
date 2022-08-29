@@ -21,7 +21,8 @@ function onFormInput(e) {
   console.log(e.target.name);
   console.log(e.target.value);
 
-  formData[e.target.name] = e.target.value;
+  formData.email = inputEl.value;
+  formData.message = textareaEl.value;
 
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 
@@ -54,5 +55,7 @@ function populateData() {
     textareaEl.value = parsedData.message;
 
     inputEl.value = parsedData.email;
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(parsedData));
   }
 }
