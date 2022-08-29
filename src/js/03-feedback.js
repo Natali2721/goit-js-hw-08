@@ -18,8 +18,8 @@ formEl.addEventListener('submit', onFormSubmit);
 formEl.addEventListener('input', throttle(onFormInput, 500));
 
 function onFormInput(e) {
-  console.log(e.target.name);
-  console.log(e.target.value);
+  //console.log(e.target.name);
+  //console.log(e.target.value);
 
   formData.email = inputEl.value;
   formData.message = textareaEl.value;
@@ -33,9 +33,10 @@ function onFormInput(e) {
 
 function onFormSubmit(e) {
   e.preventDefault();
-
+  formData.email = inputEl.value;
+  formData.message = textareaEl.value;
   //console.log('sent');
-  //console.log(formData);
+  console.log(formData);
 
   e.currentTarget.reset();
 
@@ -48,9 +49,9 @@ function populateData() {
     const savedData = localStorage.getItem(STORAGE_KEY);
     const parsedData = JSON.parse(savedData);
 
-    console.log(parsedData.message);
-    console.log(parsedData.email);
-    console.log(parsedData);
+    //console.log(parsedData.message);
+    //console.log(parsedData.email);
+    //console.log(parsedData);
 
     textareaEl.value = parsedData.message;
 
