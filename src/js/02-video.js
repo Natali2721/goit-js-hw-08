@@ -5,7 +5,7 @@ const iframe = document.querySelector('iframe');
 const myPlayer = new Player(iframe);
 
 const PLAYER_STORAGE_KEY = 'videoplayer-current-time';
-
+/*
 myPlayer.on('play', function () {
   console.log('played the video!');
 });
@@ -13,7 +13,7 @@ myPlayer.on('play', function () {
 myPlayer.getVideoTitle().then(function (title) {
   console.log('title:', title);
 });
-
+*/
 myPlayer.on(
   'timeupdate',
   throttle(function () {
